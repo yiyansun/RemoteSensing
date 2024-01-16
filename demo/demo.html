@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Hello my name is </title>
+    <title>RS Week2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Yiyan Sun" />
     <meta name="date" content="2024-01-16" />
-    <script src="demo_files/header-attrs/header-attrs.js"></script>
-    <link href="demo_files/remark-css/default.css" rel="stylesheet" />
-    <link href="demo_files/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Hello my name is <yournamehere>
+# RS Week2
+]
+.subtitle[
+## ⚔<br/>with xaringan
 ]
 .author[
 ### Yiyan Sun
@@ -26,6 +28,42 @@ class: center, middle, inverse, title-slide
 ---
 
 
+class: inverse, center, middle
+# This lecture 
+## is about R Markdown
+- Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
+---
+
+Xaringan = shar-in-gen or [ʃæ.ˈriŋ.gæn]
+
+---
+# Hello, World!
+
+
+```r
+names(xaringan:::list_css())
+```
+
+```
+##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"    "default"         
+##  [5] "duke-blue"        "fc-fonts"         "fc"               "glasgow_template"
+##  [9] "hygge-duke"       "hygge"            "ki-fonts"         "ki"              
+## [13] "kunoichi"         "lucy-fonts"       "lucy"             "metropolis-fonts"
+## [17] "metropolis"       "middlebury-fonts" "middlebury"       "nhsr-fonts"      
+## [21] "nhsr"             "ninjutsu"         "rladies-fonts"    "rladies"         
+## [25] "robot-fonts"      "robot"            "rutgers-fonts"    "rutgers"         
+## [29] "shinobi"          "tamu-fonts"       "tamu"             "uio-fonts"       
+## [33] "uio"              "uo-fonts"         "uo"               "uol-fonts"       
+## [37] "uol"              "useR-fonts"       "useR"             "uwm-fonts"       
+## [41] "uwm"              "wic-fonts"        "wic"
+```
+
+
+
+
+---
+
+---
 &lt;!-- edit name1 and name2 in the YAML above --&gt;
 
 
@@ -113,7 +151,7 @@ ggplot(namedata,
   geom_line() 
 ```
 
-![](demo_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+![](demo_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 
 
 &lt;!-- where are you from? --&gt;
@@ -126,13 +164,17 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
 ```
 
-
+---
 
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -210,7 +252,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

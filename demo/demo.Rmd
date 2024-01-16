@@ -1,13 +1,54 @@
 ---
-title: "Hello my name is <yournamehere>"
+title: "RS Week2"
+subtitle: "⚔<br/>with xaringan"
 author: "Yiyan Sun"
 date: "`r Sys.Date()`"
-output: xaringan::moon_reader
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
 params:
   name1: "Alison" 
   name2: "Allison"
 ---
 
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+
+Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+
+---
+class: inverse, center, middle
+# This lecture 
+## is about R Markdown
+- Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
+---
+
+Xaringan = shar-in-gen or [ʃæ.ˈriŋ.gæn]
+
+---
+# Hello, World!
+
+```{r}
+names(xaringan:::list_css())
+```
+
+
+
+
+---
+
+---
 <!-- edit name1 and name2 in the YAML above -->
 
 ```{r setup, include=FALSE}
@@ -91,6 +132,6 @@ library(leaflet)
 leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
 ```
 
-
+---
 
 
